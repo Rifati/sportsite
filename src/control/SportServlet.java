@@ -34,7 +34,7 @@ public class SportServlet extends HttpServlet {
 			}
 			Lid lid = new Lid(roepnaam, tussenvoegsels, achternaam, email, date);
 			io.voegLidToe(lid);
-			resp.sendRedirect("/toevoeg_lid.html");
+			resp.sendRedirect("/index.html");
 		} else if (req.getParameter("wijzig_lid_knop") != null) {
 			try {
 				String roepnaam = req.getParameter("roepnaam");

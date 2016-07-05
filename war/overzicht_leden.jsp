@@ -35,7 +35,7 @@ li a:hover:not(.active) {
 </style>
 <ul>
   <li><a href="home.html">Home</a></li>
-  <li><a href="index.jsp">Lid Toevoegen</a></li>
+  <li><a href="index.html">Lid Toevoegen</a></li>
   <li><a href="toevoeg_team.html">Team Toevoegen</a></li>
   <li><a href="overzicht_teams.jsp">Overzicht Teams</a></li>
 </ul>
