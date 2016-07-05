@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC'>
+
+
+<html>
+  <head>
+  <style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+    <title>Lid Toevoegen</title>
+<ul>
+  <li><a href="html.html">Home</a></li>
+  <li><a href="toevoeg_team.html">Team Toevoegen</a></li>
+  <li><a href="overzicht_leden.jsp">Overzicht leden</a></li>
+  <li><a href="overzicht_team.jsp">Overzicht Teams</a></li>
+</ul>
+  </head>
+
+  <body>
+<form action='/sport' method='get'>
+    <input type='text' name='roepnaam' placeholder='roepnaam'>(roepnaam)<br>
+    <input type='text' name='tussenvoegsels' placeholder='tussenvoegsels'>(tussenvoegsels)<br>
+    <input type='text' name='achternaam' placeholder='achternaam'>(achternaam)<br>
+    <input type='text' name='email' placeholder='e-mail'>(e-mail)<br>
+    <input type="text" name="datum">(geboortedatum)<br>
+    <input type='submit' name='verzend_nieuw_lid_knop' value='verstuur'>
+</form>
+  </body>
+</html>
