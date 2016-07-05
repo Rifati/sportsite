@@ -37,6 +37,7 @@ li a:hover:not(.active) {
   <li><a href="index.html">Lid Toevoegen</a></li>
   <li><a href="toevoeg_team.html">Team Toevoegen</a></li>
   <li><a href="overzicht_leden.jsp">Overzicht leden</a></li>
+  <li><a href="overzicht_teams.jsp">Overzicht Teams</a></li>
 </ul>
 </head>
 <body>
