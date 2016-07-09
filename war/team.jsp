@@ -2,6 +2,8 @@
     pageEncoding="ISO-8859-1"%>
     <%@ page import="sport.vereniging.*" %>
     <%@ page import="java.util.ArrayList" %>
+    <%@ page import="data.SportIO" %>
+    <%SportIO io = new SportIO(); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -22,6 +24,12 @@ if (request.getAttribute("team") == null) {
     <input type="text" 
        name="teamcode" 
        value="<%= team.getTeamcode() %>">(teamcode)<br>
+	<select>
+		<option></option>
+		<%for (Lid lid : io.getAlleLeden()) { %>
+			<option><%=lid.getNaam() %></option>
+		<%} %>
+	</select>
        <input type="submit" 
        name="wijzig_team_knop" 
        value="wijzig">

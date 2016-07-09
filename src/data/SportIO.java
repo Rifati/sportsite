@@ -36,6 +36,7 @@ public class SportIO {
         ent.setProperty("email", lid.getEmail());
         ent.setProperty("spelerscode", lid.getSpelerscode());
         ent.setProperty("datum", lid.getDatum());
+        
         datastore.put(ent);
     }
     public void voegTeamToe(Team team) {
@@ -44,7 +45,7 @@ public class SportIO {
         ent.setProperty("teamnaam", team.getTeamnaam());
         ent.setProperty("teamcode", team.getTeamcode());
         datastore.put(ent);
-    }
+
     public ArrayList<Lid> getAlleLeden() {
         ArrayList<Lid> leden = new ArrayList<Lid>();
         Query q = new Query("Lid");

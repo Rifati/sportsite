@@ -85,7 +85,7 @@ public class SportServlet extends HttpServlet {
 		}else if (req.getParameter("wijzig_team_knop") != null) {
 				String teamnaam = req.getParameter("teamnaam");
 				String teamcode = req.getParameter("teamcode");
-				Team team = new Team(teamnaam, teamcode);
+				Team team = new Team(teamcode, teamnaam);
 				io.verwijderTeam(req.getParameter("teamcode"));
 				io.wijzigTeam(team);
 				resp.sendRedirect("/overzicht_teams.jsp");
