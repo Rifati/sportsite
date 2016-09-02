@@ -27,12 +27,17 @@ public class SportServlet extends HttpServlet {
 			String tussenvoegsels = req.getParameter("tussenvoegsels");
 			String achternaam = req.getParameter("achternaam");
 			String email = req.getParameter("email");
+			String adres = req.getParameter("adres");
+			String postcode = req.getParameter("postcode");
+			String woonplaats = req.getParameter("woonplaats");
+			
+			
 			try {
 				date = sdf.parse(req.getParameter("datum"));
 			} catch (ParseException e) {
 				date = new Date();
 			}
-			Lid lid = new Lid(roepnaam, tussenvoegsels, achternaam, email, date);
+			Lid lid = new Lid(roepnaam, tussenvoegsels, achternaam, email, date, adres, postcode, woonplaats);
 			io.voegLidToe(lid);
 			resp.sendRedirect("/index.html");
 		} else if (req.getParameter("wijzig_lid_knop") != null) {
@@ -41,8 +46,11 @@ public class SportServlet extends HttpServlet {
 				String tussenvoegsels = req.getParameter("tussenvoegsels");
 				String achternaam = req.getParameter("achternaam");
 				String email = req.getParameter("email");
+				String adres = req.getParameter("adres");
+				String postcode = req.getParameter("postcode");
+				String woonplaats = req.getParameter("woonplaats");
 				date = sdf.parse(req.getParameter("datum"));
-				Lid lid = new Lid(roepnaam, tussenvoegsels, achternaam, email, date);
+				Lid lid = new Lid(roepnaam, tussenvoegsels, achternaam, email, date, adres, postcode, woonplaats);
 				io.verwijderLid(req.getParameter("spelerscode"));
 				io.wijzigLid(lid);
 				resp.sendRedirect("/overzicht_leden.jsp");
@@ -85,6 +93,10 @@ public class SportServlet extends HttpServlet {
 		}else if (req.getParameter("wijzig_team_knop") != null) {
 				String teamnaam = req.getParameter("teamnaam");
 				String teamcode = req.getParameter("teamcode");
+				String spelerscode = req.getParameter("spelerscode");
+				Lid lid = io.getLid(spelerscode);
+				lid.setTeamcode(teamcode);
+				io.wijzigLid(lid);
 				Team team = new Team(teamcode, teamnaam);
 				io.verwijderTeam(req.getParameter("teamcode"));
 				io.wijzigTeam(team);

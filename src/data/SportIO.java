@@ -36,6 +36,10 @@ public class SportIO {
         ent.setProperty("email", lid.getEmail());
         ent.setProperty("spelerscode", lid.getSpelerscode());
         ent.setProperty("datum", lid.getDatum());
+        ent.setProperty("teamcode", lid.getTeamcode());
+        ent.setProperty("adres", lid.getAdres());
+        ent.setProperty("postcode", lid.getPostcode());
+        ent.setProperty("woonplaats", lid.getWoonplaats());
         
         datastore.put(ent);
     }
@@ -45,6 +49,7 @@ public class SportIO {
         ent.setProperty("teamnaam", team.getTeamnaam());
         ent.setProperty("teamcode", team.getTeamcode());
         datastore.put(ent);
+    }
 
     public ArrayList<Lid> getAlleLeden() {
         ArrayList<Lid> leden = new ArrayList<Lid>();
@@ -57,6 +62,10 @@ public class SportIO {
             lid.setAchternaam( (String) ent.getProperty("achternaam") );
             lid.setEmail( (String) ent.getProperty("email") );
             lid.setSpelerscode( (String) ent.getProperty("spelerscode") );
+            lid.setTeamcode( (String) ent.getProperty("teamcode"));
+            lid.setAdres( (String) ent.getProperty("adres"));
+            lid.setPostcode( (String) ent.getProperty("postcode"));
+            lid.setWoonplaats( (String) ent.getProperty("woonplaats"));
             try {
 				lid.setDatum( new SimpleDateFormat("dd-MM-yyyy").parse((String) ent.getProperty("spelerscode")) );
 			} catch (ParseException e) {
@@ -78,6 +87,10 @@ public class SportIO {
             lid.setEmail( (String) ent.getProperty("email") );
             lid.setSpelerscode( (String) ent.getProperty("spelerscode") );
             lid.setDatum( (Date) ent.getProperty("datum"));
+            lid.setTeamcode( (String) ent.getProperty("teamcode"));
+            lid.setAdres( (String) ent.getProperty("adres"));
+            lid.setPostcode( (String) ent.getProperty("postcode"));
+            lid.setWoonplaats( (String) ent.getProperty("woonplaats"));
         } catch (EntityNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

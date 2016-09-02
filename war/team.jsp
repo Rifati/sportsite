@@ -24,10 +24,10 @@ if (request.getAttribute("team") == null) {
     <input type="text" 
        name="teamcode" 
        value="<%= team.getTeamcode() %>">(teamcode)<br>
-	<select>
+	<select name="spelerscode">
 		<option></option>
 		<%for (Lid lid : io.getAlleLeden()) { %>
-			<option><%=lid.getNaam() %></option>
+			<option value = "<%= lid.getSpelerscode() %>" ><%=lid.getNaam() %></option>
 		<%} %>
 	</select>
        <input type="submit" 
@@ -37,6 +37,13 @@ if (request.getAttribute("team") == null) {
        name="verwijder_team_knop" 
        value="verwijder">
 </form>
+<h1>Spelerlijst</h1>
+	<%for (Lid lid : io.getAlleLeden()) {
+		try {
+		if (lid.getTeamcode().equalsIgnoreCase(team.getTeamcode())){%>
+			<p> <%=lid.getNaam() %></p>
+		<%}}catch (NullPointerException e){} }%>
+
 <% } %>
 </body>
 </html>

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Lid {
     private String spelerscode, roepnaam, 
-        tussenvoegsels, achternaam, email;
+        tussenvoegsels, achternaam, email, teamcode, adres, postcode, woonplaats;
     
     private Date datum;
     
@@ -16,7 +16,11 @@ public class Lid {
         this.achternaam = "";
         this.email = "";
         this.datum = new Date();
-    }
+        this.teamcode = "";
+        this.adres = "";
+        this.postcode = "";
+        this.woonplaats = "";
+        		}
 
     /**
      * constructor maakt lid-object
@@ -28,7 +32,8 @@ public class Lid {
     public Lid (String roepnaam,
                 String tussenvoegsels, 
                 String achternaam,
-                String email, Date datum) {
+                String email, Date datum, String adres,
+                String postcode, String woonplaats) {
         
         this.roepnaam = roepnaam;
         this.tussenvoegsels = tussenvoegsels;
@@ -36,6 +41,10 @@ public class Lid {
         this.email = email;
         this.spelerscode = email;  
         this.datum = datum;
+        this.adres = adres;
+        this.postcode = postcode;
+        this.woonplaats = woonplaats;
+        this.teamcode = "";
     }
     
     public Date getDatum() {
@@ -87,6 +96,35 @@ public class Lid {
     public void setEmail(String email) {
     	this.email = email;
     }
+    
+    public String getTeamcode() {
+		return teamcode;
+	}
+
+	public void setTeamcode(String teamcode) {
+		this.teamcode = teamcode;
+	}
+	public String getAdres() {
+	    	return adres;
+	}
+	    
+	public void setAdres(String adres) {
+	    	this.adres = adres;
+	}
+	public String getPostcode() {
+	    	return postcode;
+	}
+	    
+    public void setPostcode(String postcode) {
+	    	this.postcode = postcode;
+	}
+    public String getWoonplaats() {
+    	return woonplaats;
+    }
+    
+    public void setWoonplaats(String woonplaats) {
+    	this.woonplaats = woonplaats;
+    }    
     /**
      *@return samengevoegde naam
      *
